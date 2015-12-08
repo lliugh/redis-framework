@@ -12,7 +12,7 @@ import redis.clients.jedis.ShardedJedis;
  * @(#)RedisTemplate.java 1.0 08/12/2015
  */
 
-@Repository("redisTemplate")
+@Repository
 public class RedisTemplate {
 
     private static final Logger log = LoggerFactory.getLogger(RedisTemplate.class);

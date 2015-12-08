@@ -1,7 +1,7 @@
 package com.lliugh.redis.service.impl;
 
-import com.lliugh.redis.dao.IUserDao;
-import com.lliugh.redis.service.IUserService;
+import com.lliugh.redis.dao.UserDao;
+import com.lliugh.redis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
  * @(#)UserService.java 1.0 07/12/2015
  */
 @Service
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
-    IUserDao userDao;
+    UserDao userDao;
 
     public String find(Long id) {
         return userDao.get(String.valueOf(id));

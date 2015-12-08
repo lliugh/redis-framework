@@ -1,6 +1,6 @@
 package com.lliugh.redis.controller;
 
-import com.lliugh.redis.service.IUserService;
+import com.lliugh.redis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,17 +15,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    IUserService userService;
+    UserService userService;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Object getUser(@PathVariable("id") long id) {
         String user = userService.find(id);
-        return DataEvent.wrap("user", "aaaaa");
+        return DataEvent.wrap("user", user);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public Object insertUser(@PathVariable("id") long id, @RequestBody String user) {
-        System.out.println("here");
+        System.out.println(user);
         if (userService.insertUser(id, user) != null) {
             return DataEvent.wrap("message", "保存成功");
         }

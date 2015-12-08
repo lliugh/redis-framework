@@ -5,7 +5,7 @@ package com.lliugh.redis.dao;
  * @(#)IUserDao.java 1.0 08/12/2015
  */
 
-public interface IUserDao {
+public interface UserDao {
     /**
      * 主键查找
      *

@@ -1,5 +1,6 @@
 package com.lliugh.redis.db.impl;
 
+import com.lliugh.redis.db.RedisDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ import redis.clients.jedis.ShardedJedisPool;
  * @(#)RedisDataSourceImpl.java 1.0 08/12/2015
  */
 
-@Repository("redisDataSource")
-public class RedisDataSourceImpl {
+@Repository
+public class RedisDataSourceImpl implements RedisDataSource{
     private static final Logger log = LoggerFactory.getLogger(RedisDataSourceImpl.class);
 
     @Autowired
@@ -40,4 +41,6 @@ public class RedisDataSourceImpl {
             shardedJedisPool.returnResource(shardedJedis);
         }
     }
+
+
 }

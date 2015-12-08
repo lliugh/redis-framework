@@ -50,4 +50,8 @@
             </list>
         </constructor-arg>
     </bean>
+    <bean id="userService" class="com.lliugh.redis.service.impl.UserServiceImpl" />
+    <bean id="userDao" class="com.lliugh.redis.dao.impl.UserDaoImpl" />
+    <bean id="redisDataSource" class="com.lliugh.redis.db.impl.RedisDataSourceImpl" />
+
 </beans>
