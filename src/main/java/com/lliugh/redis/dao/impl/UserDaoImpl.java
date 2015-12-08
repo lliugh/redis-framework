@@ -1,7 +1,7 @@
 package com.lliugh.redis.dao.impl;
 
 import com.lliugh.redis.dao.IUserDao;
-import com.lliugh.redis.dao.RedisClientTemplate;
+import com.lliugh.redis.dao.RedisTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,14 +13,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserDaoImpl implements IUserDao {
     @Autowired
-    RedisClientTemplate redisClientTemplate;
+    RedisTemplate redisTemplate;
 
     public String get(String key) {
-        return redisClientTemplate.get(key);
+        return redisTemplate.get(key);
     }
 
     public String add(String key, String value) {
-        return redisClientTemplate.set(key, value);
+        return redisTemplate.set(key, value);
     }
 
 
