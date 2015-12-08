@@ -20,7 +20,7 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Object getUser(@PathVariable("id") long id) {
         String user = userService.find(id);
-        return DataEvent.wrap("user", user);
+        return DataEvent.wrap("user", "aaaaa");
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
